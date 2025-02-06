@@ -1,0 +1,25 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: claim-service
+  datasource:
+    url: jdbc:mysql://localhost:3306/claim_service
+    username: root
+    password: revathi
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  liquibase:
+    enabled: true
+    change-log: classpath:db/changelog/db.changelog-master.yaml
+#    database-platform: org.hibernate.dialect.MySQLDialect
+#  flyway:
+#    enabled: true
+#    locations: classpath:db/migration
+#    baseline-on-migrate: true   # If schema already exists, allows Flyway to start tracking changes
+#    validate-on-migrate: true   # Ensures no conflicts in schema changes
+#    out-of-order: false         # Ensures migrations run in strict version order
